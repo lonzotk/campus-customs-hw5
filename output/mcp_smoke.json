@@ -1,0 +1,92 @@
+[
+  {
+    "prompt": "I started the campus_customs MCP server and it says it's running. Can you call each of the three tools through that connection like a normal tool call, and tell me if you can't see them? Then update output/mcp_smoke.json with the prompt I asked, the tool name and the real output for each one, so it replaces the old script results. Please don't change the database or make anything up.",
+    "tool_name": "customer_order_ticket_101",
+    "output": {
+      "ticket": {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "open",
+        "notes": "Needs a tee in size S.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      "inventory": [
+        {"sku": "CC-TEE-WHITE", "name": "Classic Bulldog Tee", "size": "L", "qty": 3, "location": "Aisle B"},
+        {"sku": "CC-TEE-WHITE", "name": "Classic Bulldog Tee", "size": "M", "qty": 5, "location": "Aisle B"},
+        {"sku": "CC-TEE-WHITE", "name": "Classic Bulldog Tee", "size": "S", "qty": 0, "location": "Aisle B"},
+        {"sku": "CC-TEE-WHITE", "name": "Classic Bulldog Tee", "size": "XL", "qty": 2, "location": "Aisle B"}
+      ],
+      "pricing": {"sku": "CC-TEE-WHITE", "unit_cost": 8, "list_price": 28},
+      "invoice": {
+        "id": 501,
+        "vendor_id": 1,
+        "amount": 840,
+        "due_date": "2026-08-28",
+        "status": "open",
+        "description": "Rush reprint CC-TEE-WHITE S"
+      }
+    }
+  },
+  {
+    "prompt": "I started the campus_customs MCP server and it says it's running. Can you call each of the three tools through that connection like a normal tool call, and tell me if you can't see them? Then update output/mcp_smoke.json with the prompt I asked, the tool name and the real output for each one, so it replaces the old script results. Please don't change the database or make anything up.",
+    "tool_name": "rent_notice_ticket_102",
+    "output": {
+      "ticket": {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Email: shop rent due in 2 days.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      "lease": {
+        "id": 1,
+        "space_name": "Chapel Street shop",
+        "landlord": "Elm City Properties",
+        "monthly_rent": 2400,
+        "next_due": "2026-09-02",
+        "notes": null
+      }
+    }
+  },
+  {
+    "prompt": "I started the campus_customs MCP server and it says it's running. Can you call each of the three tools through that connection like a normal tool call, and tell me if you can't see them? Then update output/mcp_smoke.json with the prompt I asked, the tool name and the real output for each one, so it replaces the old script results. Please don't change the database or make anything up.",
+    "tool_name": "price_override_ticket_103",
+    "output": {
+      "ticket": {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      },
+      "inventory": [
+        {"sku": "CC-HOOD-NAVY", "name": "Basic Hoodie Big Yale", "size": "L", "qty": 14, "location": "Aisle A"},
+        {"sku": "CC-HOOD-NAVY", "name": "Basic Hoodie Big Yale", "size": "M", "qty": 8, "location": "Aisle A"},
+        {"sku": "CC-HOOD-NAVY", "name": "Basic Hoodie Big Yale", "size": "S", "qty": 4, "location": "Aisle A"},
+        {"sku": "CC-HOOD-NAVY", "name": "Basic Hoodie Big Yale", "size": "XL", "qty": 6, "location": "Aisle A"}
+      ],
+      "pricing": {"sku": "CC-HOOD-NAVY", "unit_cost": 22, "list_price": 58}
+    }
+  }
+]

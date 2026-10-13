@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "campus_customs": {
+      "type": "stdio",
+      "command": "py",
+      "args": [
+        "-3",
+        "-m",
+        "mcp_server.server"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}

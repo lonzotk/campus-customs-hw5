@@ -1,0 +1,90 @@
+{
+  "sources": {
+    "audit_trail": "output/audit_trail.json",
+    "working_database": "data/campus_customs_new.db",
+    "board_screenshots": "output/screenshots/"
+  },
+  "tickets": [
+    {
+      "ticket_id": 101,
+      "title": "Bulldog tee, size S",
+      "board_status": "resolved in board",
+      "database_status": "open",
+      "screenshot": "screenshots/ticket-101.png",
+      "run_id": "0117578eb3fe4704a4c6929fe2622bca",
+      "completed_at": "2026-10-13T01:10:40.596843+00:00",
+      "agents": [
+        {
+          "name": "Boss",
+          "tools_used": ["shop_operations_context", "customer_order_ticket_101"],
+          "summary": "Confirmed size S was out of stock and invoice 501 for $840 was still open for Bulldog Print Co. Returned a customer-response draft and recommended against ordering from that vendor while the invoice is unpaid."
+        }
+      ],
+      "delegations": [],
+      "cash_change": 0,
+      "cash_note": "No payment for ticket 101 is recorded in the audit trail or payments table."
+    },
+    {
+      "ticket_id": 102,
+      "title": "Shop rent due",
+      "board_status": "resolved in board",
+      "database_status": "open",
+      "screenshot": "screenshots/ticket-102.png",
+      "run_id": "6cfd39866a194198976b729dcd0a8833",
+      "completed_at": "2026-10-13T01:15:41.079549+00:00",
+      "agents": [
+        {
+          "name": "Boss",
+          "tools_used": ["shop_operations_context", "rent_notice_ticket_102"],
+          "summary": "Confirmed $2,400 rent on lease 1 was due 2026-09-02 using desk date 2026-08-31. Reported that paying from $3,400 checking would leave $1,000 and recommended human review. No agent delegation is recorded."
+        }
+      ],
+      "delegations": [],
+      "cash_change": -2400,
+      "cash_note": "Payment 1 is kind rent, ref_id 1, amount $2,400, paid 2026-08-31 from checking, approved_by Stefan."
+    },
+    {
+      "ticket_id": 103,
+      "title": "Bulk hoodie discount",
+      "board_status": "resolved in board",
+      "database_status": "open",
+      "screenshot": "screenshots/ticket-103.png",
+      "run_id": "413beb0d13e946ceb0f8fa36ad3c5953",
+      "completed_at": "2026-10-13T01:18:36.835139+00:00",
+      "agents": [
+        {
+          "name": "Boss",
+          "tools_used": ["shop_operations_context", "price_override_ticket_103"],
+          "summary": "Checked the ticket and shop context, delegated the stock-gap and recommendation question to Inventory, then advised against promising quantity, price, or sourcing not supported by the records."
+        },
+        {
+          "name": "Inventory",
+          "tools_used": ["price_override_ticket_103", "shop_operations_context"],
+          "summary": "Reported 8 size-M hoodies against a request for 20, no approved discount, and no identified supplier. Returned those constraints to Boss."
+        }
+      ],
+      "delegations": [
+        {
+          "from": "Boss",
+          "to": "Inventory",
+          "question": "Ticket 103 asks for 20 CC-HOOD-NAVY size M, but listed inventory is 8. Based only on this ticket/context, advise whether any availability/pricing recommendation is appropriate; identify constraints without proposing unsupported facts.",
+          "response_summary": "The listed stock is 12 below the request; availability of the 8 is not confirmed, no approved discount is provided, and the hoodie supplier is not identified."
+        }
+      ],
+      "cash_change": 0,
+      "cash_note": "No purchase payment is recorded in the audit trail or payments table."
+    }
+  ],
+  "cash_reconciliation": {
+    "account": "checking",
+    "as_of": "2026-08-31",
+    "starting_balance": 3400,
+    "ticket_101_change": 0,
+    "ticket_102_change": -2400,
+    "ticket_103_change": 0,
+    "ending_balance": 1000,
+    "equation": "3400 - 2400 + 0 + 0 = 1000",
+    "payment_ids": [1],
+    "database_verification": "Matches data/campus_customs_new.db cash_accounts and payments rows."
+  }
+}
